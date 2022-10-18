@@ -20,8 +20,14 @@
             </div>
             <div class="form__buttons">
                 <div class="toggle">
-                    <button class="toggle__button toggle__button-active">Map</button>
-                    <button class="toggle__button">List</button>
+                    <button 
+                        class="toggle__button toggle__button-active" 
+                        [ngClass]="{'toggle__button-active': map}"
+                        (click)="map = true">Map</button>
+                    <button 
+                        class="toggle__button"
+                        [ngClass]="{'toggle__button-active': !map}" 
+                        (click)="map = false">List</button>
                 </div>
                 <button class="export">
                     <img src="../../../assets/icons/export.svg" alt="Export icon" class="export__icon">
@@ -29,14 +35,19 @@
                 </button>
             </div>
         </form>
-        <div class="wrapper">
-            <ul class="list">
-                <app-card 
-                    *ngFor="let customer of filteredCustomers"
-                    [customer]="customer"
-                ></app-card>
-            </ul>
-            <app-map [coords]="coords"></app-map>
-        </div>
+        <ng-container *ngIf="map; else elseBlock">
+            <div class="wrapper">
+                <ul class="list">
+                    <app-card 
+                        *ngFor="let customer of filteredCustomers"
+                        [customer]="customer"
+                    ></app-card>
+                </ul>
+                <app-map [coords]="coords"></app-map>
+            </div>
+        </ng-container>
+        <ng-template #elseBlock>
+            <app-table [customers]="filteredCustomers"></app-table>
+        </ng-template>
     </div>
 </section>

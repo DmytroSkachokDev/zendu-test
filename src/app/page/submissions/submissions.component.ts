@@ -14,8 +14,9 @@ export class SubmissionsComponent implements OnInit {
   public filteredCustomers: ICustomer[] = [];
   public filterText: string = '';
   public coords: ICoords[] = [];
-  public filterStatus: string = ''
-  public filterDate: string = ''
+  public filterStatus: string = '';
+  public filterDate: string = '';
+  public map = true;
 
   ngOnInit(): void {
     this.filteredCustomers = this.customers;
