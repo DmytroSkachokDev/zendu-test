@@ -1,0 +1,81 @@
+.card {
+    width: 100%;
+    padding: 15px 16px;
+    border: 1px solid #B8B9BC;
+    border-radius: 4px;
+}
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card__title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 140%;
+    color: #060C1B;
+}
+
+.status-block {
+    max-width: fit-content;
+    padding: 4px 16px;
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 4px;
+}
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.success {
+    background: #D7E5DA;
+    color: #53D86A;
+    border: 1px solid #53D86A;
+}
+.success .dot {
+    background-color: #53D86A;
+}
+.error {
+    background: rgba(255, 61, 0, 0.1);
+    color: #FF3D00;;
+    border: 1px solid #FF3D00;
+}
+.error .dot {
+    background-color: #FF3D00;
+}
+.unassigned {
+    background: #ECECED;
+    color: #B8B9BC;
+    border: 1px solid #B8B9BC;
+}
+.unassigned .dot {
+    background-color: #B8B9BC;
+}
+
+.text {
+    margin-top: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    display: flex;
+    align-items: center;
+    color: #B8B9BC;
+}
+.text span {
+    margin-left: 5px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #060C1B;
+}
+.text:last-child span {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    color: #FF3D00;
+}

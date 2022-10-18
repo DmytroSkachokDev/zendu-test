@@ -1,0 +1,135 @@
+.submissions {
+    padding: 36px 0 63px;
+}
+.title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 140%;
+    color: #060C1B;
+}
+.form {
+    height: 48px;
+    margin: 26px 0 36px;
+    display: flex;
+    justify-content: space-between;
+}
+.form__fields {
+    height: 100%;
+    display: flex;
+    column-gap: 40px;
+}
+.form__input,
+.form__select,
+.form__date {
+    font-family: 'Roboto';
+    height: 100%;
+    color: #060C1B;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    border: 1px solid #B8B9BC;
+    border-radius: 4px;
+    outline: none;
+}
+.form__input {
+    width: 334px;
+    padding: 13px 10px 13px 40px;
+    background: url('../../../assets/icons/search.svg') no-repeat scroll 14px;
+    color: #060C1B;
+}
+.form__input::placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #B8B9BC;
+}
+.form__select {
+    width: 209px;
+    padding: 13px 16px;
+    appearance: none;
+    background: url('../../../assets/icons/arrow.svg') no-repeat scroll 170px;
+    cursor: pointer;
+}
+.form__date {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    width: 209px;
+    background: url('../../../assets/icons/calendar.svg') no-repeat scroll 14px;
+    appearance: none;
+    padding-left: 40px;
+}
+.form__date::-webkit-calendar-picker-indicator {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 12px;
+    opacity: 0;
+}
+.form__buttons {
+    display: flex;
+    height: 100%;
+    column-gap: 25px;
+}
+.toggle {
+    width: 152px;
+    overflow: hidden;
+}
+.toggle__button {
+    font-family: 'Roboto';
+    width: 50%;
+    height: 100%;
+    border: 2px solid #B8B9BC;
+    border-radius: 4px;
+    background: #FFFFFF;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #060C1B;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+.toggle__button:first-child {
+    border-right: none;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+.toggle__button:last-child {
+    border-left: none;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+.toggle__button-active {
+    border: none;
+    color: #FFFFFF;
+    background: #2188D9;
+}
+.export {
+    font-family: 'Roboto';
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    column-gap: 9px;
+    align-items: center;
+}
+.export__text {
+    margin-top: 3px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    color: #2188D9;
+}
+.wrapper {
+    display: flex;
+    column-gap: 40px;
+}
+
+.list {
+    list-style: none;
+    width: 460px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}

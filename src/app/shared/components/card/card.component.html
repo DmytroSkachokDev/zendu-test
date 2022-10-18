@@ -1,0 +1,12 @@
+<li class="card">
+    <div class="top">
+        <h2 class="card__title">{{customer.task}}</h2>
+        <div class="status-block {{customer.status}}">
+            <span class="dot"></span>
+            {{customer.statusText}}
+        </div>
+    </div>
+    <div class="text">From: <span>{{customer.from}}</span></div>
+    <div class="text">To: <span>{{customer.to}}</span></div>
+    <div class="text">Due Date: <span>{{customer.date | convertDate}}</span></div>
+</li>

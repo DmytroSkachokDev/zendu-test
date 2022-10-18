@@ -1,0 +1,42 @@
+<section class="submissions">
+    <div class="container">
+        <h1 class="title">Submissions</h1>
+        <form class="form">
+            <div class="form__fields">
+                <input type="text" class="form__input" placeholder="Search..." [ngModelOptions]="{standalone: true}" [(ngModel)]="filterText" (input)="onInput()">
+                <select name="select" class="form__select">
+                    <option value="" disabled selected hidden>Select Form</option>
+                    <option value="Unknown Value">Unknown Value</option>
+                    <option value="Unknown Value">Unknown Value</option>
+                    <option value="Unknown Value">Unknown Value</option>
+                </select>
+                <select name="select" class="form__select" [(ngModel)]="filterStatus" (change)="onChangeSelect()">
+                    <option value="" disabled selected hidden>Select Status</option>
+                    <option value="Low Risk">Low Risk</option>
+                    <option value="Uncomplete">Uncomplete</option>
+                    <option value="Unassigned">Unassigned</option>
+                </select>
+                <input type="date" class="form__date" [ngModelOptions]="{standalone: true}" [(ngModel)]="filterDate" (change)="onChangeDate()">
+            </div>
+            <div class="form__buttons">
+                <div class="toggle">
+                    <button class="toggle__button toggle__button-active">Map</button>
+                    <button class="toggle__button">List</button>
+                </div>
+                <button class="export">
+                    <img src="../../../assets/icons/export.svg" alt="Export icon" class="export__icon">
+                    <span class="export__text">Export</span>
+                </button>
+            </div>
+        </form>
+        <div class="wrapper">
+            <ul class="list">
+                <app-card 
+                    *ngFor="let customer of filteredCustomers"
+                    [customer]="customer"
+                ></app-card>
+            </ul>
+            <app-map [coords]="coords"></app-map>
+        </div>
+    </div>
+</section>

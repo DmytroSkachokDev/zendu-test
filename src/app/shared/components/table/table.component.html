@@ -1,0 +1,25 @@
+<table>
+    <thead>
+        <td class="first"><input type="checkbox"></td>
+        <td>Task</td>
+        <td>Status</td>
+        <td>From</td>
+        <td>To</td>
+        <td>Customer Address</td>
+        <td>Due Date</td>
+    </thead>
+    <tr class="row" *ngFor="let customer of customers">
+        <td class="first"><input class="checkbox" type="checkbox"></td>
+        <td>{{customer.task}}</td>
+        <td>
+            <div class="status-block {{customer.status}}">
+                <span class="dot"></span>
+                {{customer.statusText}}
+            </div>
+        </td>
+        <td>{{customer.from}}</td>
+        <td>{{customer.to}}</td>
+        <td>{{customer.address}}</td>
+        <td>{{customer.date}}</td>
+    </tr>
+</table>
