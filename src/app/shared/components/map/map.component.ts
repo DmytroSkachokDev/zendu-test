@@ -1,34 +1,28 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 import { ICoords } from 'src/app/constants/customers.interface';
+import { MapApiService } from '../../services/map-api.service';
+
 
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
-  styleUrls: ['./map.component.css']
+  styleUrls: ['./map.component.css'],
+  providers: [MapApiService]
 })
 export class MapComponent implements OnInit {
 
   @Input() coords: ICoords[];
 
-  public apiLoaded: Observable<boolean>;
+  public isApiLoaded$: Observable<boolean>;
   public center: google.maps.LatLngLiteral;
   public markerOptions: google.maps.MarkerOptions = {draggable: false, icon: '../../../../assets/icons/marker.svg'};
   public markerPositions: google.maps.LatLngLiteral[] = [];
   public zoom = 16;
 
-  constructor(httpClient: HttpClient) {
-    this.apiLoaded = httpClient.jsonp(
-      'https://maps.googleapis.com/maps/api/js?key=AIzaSyAauNOssUm5MfP0c-XEtZQNKdKBmadJK60', 
-      'callback'
-      )
-      .pipe(
-        map(() => true),
-        catchError(() => of(false)),
-      );
+  constructor(private mapApiService: MapApiService) {
+    this.isApiLoaded$ = this.mapApiService.loadApi();
   }
 
   ngOnInit(): void {

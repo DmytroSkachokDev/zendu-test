@@ -38,9 +38,7 @@ export class SubmissionsComponent implements OnInit {
   }
 
   public getCoords(): ICoords[] {
-    const filteredCoords: ICoords[] = [];
-    this.filteredCustomers.forEach((customer: ICustomer) => filteredCoords.push(customer.coords));
-    return filteredCoords;
+    return this.filteredCustomers.map((customer: ICustomer) => customer.coords);
   }
 
 }
