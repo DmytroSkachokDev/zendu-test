@@ -36,3 +36,9 @@ table {
     justify-content: space-between;
     align-items: center;
 }
+.numbers {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #060C1B;
+}

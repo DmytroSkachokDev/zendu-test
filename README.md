@@ -23,4 +23,5 @@ Additional:
 Map Screen:
 ![photo_2022-10-18_18-09-43](https://user-images.githubusercontent.com/112478494/196470300-8716f123-2b1d-42d7-89fd-2bf4b762d4cf.jpg)
 List Screen:
-![photo_2022-10-18_18-09-53](https://user-images.githubusercontent.com/112478494/196470302-9ea0270a-062f-48da-ac9b-d54a0cfbc8f3.jpg)
+![photo_2022-10-19_17-20-00](https://user-images.githubusercontent.com/112478494/196732163-ad94648a-2108-439e-98ad-659cf67318c6.jpg)
+![photo_2022-10-19_17-20-44](https://user-images.githubusercontent.com/112478494/196732175-bef7a420-938e-4aab-853e-85f0fda29965.jpg)

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { ICustomer } from 'src/app/constants/customers.interface';
 
@@ -7,9 +7,9 @@ import { ICustomer } from 'src/app/constants/customers.interface';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css']
 })
-export class TableComponent implements OnInit{
+export class TableComponent {
 
-  @Input() customers: ICustomer[]
+  @Input() customers: ICustomer[];
 
   public maxSize = 5;
   public page = 1; 
@@ -17,11 +17,6 @@ export class TableComponent implements OnInit{
   public headerTask = {completed: false};
   public allComplete: boolean = false;
   public displayedColumns: string[] = ['checkbox', 'task', 'status', 'from', 'to', 'address', 'date'];
-  public totalSubmissions: number;
-
-  ngOnInit(): void {
-    this.totalSubmissions = this.customers.length;
-  }
 
   public updateAllComplete(): void {
     this.allComplete = this.customers != null && this.customers.every((customer: ICustomer) => customer.completed);
@@ -43,8 +38,8 @@ export class TableComponent implements OnInit{
   }
 
   public getCurrentSubmissions(currentPage: number): string {
-    if (this.customers.length < 10) {
-      return `${currentPage}-${this.customers.length}`
+    if (this.customers.length <= 10) {
+      return `${this.customers.length}`;
     } else {
       if (currentPage === 1) {
         return `1-10`;
