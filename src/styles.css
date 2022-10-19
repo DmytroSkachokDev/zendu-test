@@ -20,3 +20,50 @@ a {
     max-width: 1456px;
     margin: 0 auto;
 }
+.ngx-pagination {
+    margin-bottom: 0 !important;
+    display: flex !important;
+    column-gap: 8px !important;
+}
+.ngx-pagination li {
+    column-gap: 8px !important;
+    width: 32px;
+    height: 32px;
+    background: #FFFFFF;
+    border: 1px solid #B8B9BC;
+    border-radius: 4px !important;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #060C1B;
+}
+.pugination-previous::before {
+    display: none !important;
+}
+.ngx-pagination .current {
+    color: #2188D9;
+    border: 1px solid #2188D9;
+}
+.ngx-pagination a {
+    width: 100%;
+    height: 100%;
+}
+.ngx-pagination a:hover {
+    background: #ececed9a !important;
+}
+.pagination-previous {
+    background: url(assets/icons/arrow_left.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+.pagination-next {
+    background: url(assets/icons/arrow_right.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+.disabled::before,
+.disabled::after,
+.ngx-pagination a::before,
+.ngx-pagination a::after {
+    display: none !important;
+}

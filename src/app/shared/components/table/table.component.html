@@ -1,25 +1,58 @@
-<table>
-    <thead>
-        <td class="first"><input type="checkbox"></td>
-        <td>Task</td>
-        <td>Status</td>
-        <td>From</td>
-        <td>To</td>
-        <td>Customer Address</td>
-        <td>Due Date</td>
-    </thead>
-    <tr class="row" *ngFor="let customer of customers">
-        <td class="first"><input class="checkbox" type="checkbox"></td>
-        <td>{{customer.task}}</td>
-        <td style="min-width: 120px;">
-            <div class="status-block {{customer.status}}">
-                <span class="dot"></span>
-                {{customer.statusText}}
-            </div>
-        </td>
-        <td>{{customer.from}}</td>
-        <td>{{customer.to}}</td>
-        <td>{{customer.address}}</td>
-        <td>{{customer.date}}</td>
-    </tr>
+<table mat-table [dataSource]="customers | paginate: { itemsPerPage: 10, currentPage: page }" class="mat-elevation-z8">
+  <ng-container matColumnDef="checkbox">
+    <th mat-header-cell *matHeaderCellDef>
+      <mat-checkbox
+        [color]="color"
+        [checked]="allComplete"
+        [indeterminate]="someComplete()"
+        (change)="setAll($event.checked)"
+      ></mat-checkbox>
+    </th>
+    <td mat-cell *matCellDef="let element">
+      <mat-checkbox
+        [color]="color"
+        [(ngModel)]="element.completed"
+        (ngModelChange)="updateAllComplete()"
+      ></mat-checkbox>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="task">
+    <th mat-header-cell *matHeaderCellDef> Task </th>
+    <td mat-cell *matCellDef="let element"> {{element.task}} </td>
+  </ng-container>
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef> Status </th>
+    <td mat-cell *matCellDef="let element"> <app-status [status]="element.status" [statusText]="element.statusText"></app-status></td>
+  </ng-container>
+  <ng-container matColumnDef="from">
+    <th mat-header-cell *matHeaderCellDef> From </th>
+    <td mat-cell *matCellDef="let element"> {{element.from}} </td>
+  </ng-container>
+  <ng-container matColumnDef="to">
+      <th mat-header-cell *matHeaderCellDef> To </th>
+      <td mat-cell *matCellDef="let element"> {{element.to}} </td>
+  </ng-container>
+  <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef> Customer Address </th>
+      <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+  </ng-container>
+  <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef> Due Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.date | convertDate}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+
+<div class="pagination">
+  <div class="numbers">{{getCurrentSubmissions(page)}} of {{totalSubmissions}} submissions</div>
+  <pagination-controls
+    [maxSize]="maxSize"
+    previousLabel=""
+    nextLabel=""
+    (pageChange)="page = $event"
+  ></pagination-controls>
+</div>
+
+

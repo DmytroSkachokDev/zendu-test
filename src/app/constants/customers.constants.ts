@@ -3,6 +3,7 @@ import { ICustomer } from "./customers.interface"
 export const CUSTOMERS: ICustomer[] = [
     {
         id: 1,
+        completed: false,
         task: 'Work Flow: Requires Location',
         status: 'success',
         statusText: 'Low Risk',
@@ -17,6 +18,7 @@ export const CUSTOMERS: ICustomer[] = [
     },
     {
         id: 2,
+        completed: false,
         task: 'Work Flow: Requires Location',
         status: 'success',
         statusText: 'Low Risk',
@@ -31,6 +33,7 @@ export const CUSTOMERS: ICustomer[] = [
     },
     {
         id: 3,
+        completed: false,
         task: 'Work Flow: Location Submitted',
         status: 'error',
         statusText: 'Uncomplete',
@@ -45,6 +48,7 @@ export const CUSTOMERS: ICustomer[] = [
     },
     {
         id: 4,
+        completed: false,
         task: 'Work Flow: Requires Location',
         status: 'unassigned',
         statusText: 'Unassigned',
@@ -59,6 +63,7 @@ export const CUSTOMERS: ICustomer[] = [
     },
     {
         id: 5,
+        completed: false,
         task: 'Work Flow: Requires Location',
         status: 'unassigned',
         statusText: 'Unassigned',
@@ -73,6 +78,7 @@ export const CUSTOMERS: ICustomer[] = [
     },
     {
         id: 6,
+        completed: false,
         task: 'Work Flow: Requires Location',
         status: 'error',
         statusText: 'Uncomplete',
@@ -87,6 +93,7 @@ export const CUSTOMERS: ICustomer[] = [
     },
     {
         id: 7,
+        completed: false,
         task: 'Work Flow: Requires Location',
         status: 'error',
         statusText: 'Uncomplete',
@@ -101,6 +108,7 @@ export const CUSTOMERS: ICustomer[] = [
     },
     {
         id: 8,
+        completed: false,
         task: 'Work Flow: Requires Location',
         status: 'success',
         statusText: 'Low Risk',
@@ -115,6 +123,7 @@ export const CUSTOMERS: ICustomer[] = [
     },
     {
         id: 9,
+        completed: false,
         task: 'Work Flow: Requires Location',
         status: 'success',
         statusText: 'Low Risk',
@@ -129,6 +138,7 @@ export const CUSTOMERS: ICustomer[] = [
     },
     {
         id: 10,
+        completed: false,
         task: 'Work Flow: Requires Location',
         status: 'error',
         statusText: 'Uncomplete',
@@ -139,6 +149,66 @@ export const CUSTOMERS: ICustomer[] = [
         coords: {
             lat: 43.65379745733883,
             lng: -79.37034013031518
+        }
+    },
+    {
+        id: 11,
+        completed: false,
+        task: 'Work Flow: Requires Location',
+        status: 'success',
+        statusText: 'Low Risk',
+        from: 'zendu@zendu.com',
+        to: 'tracy@zenduit.com',
+        address: '2118 Thornridge Cir. Syracuse, Connecticut 35624',
+        date: 'October 10, 2022 18:12:00',
+        coords: {  
+            lat: 43.65841593589992, 
+            lng: -79.35964560297595
+        }
+    },
+    {
+        id: 12,
+        completed: false,
+        task: 'Work Flow: Requires Location',
+        status: 'unassigned',
+        statusText: 'Unassigned',
+        from: 'zendu@zendu.com',
+        to: 'tracy@zenduit.com',
+        address: '8502 Preston Rd. Inglewood, Maine 98380',
+        date: 'October 11, 2022 04:12:00',
+        coords: {
+            lat: 43.65444923611496,
+            lng: -79.36139673544193
+        }
+    },
+    {
+        id: 13,
+        completed: false,
+        task: 'Work Flow: Requires Location',
+        status: 'success',
+        statusText: 'Low Risk',
+        from: 'zendu@zendu.com',
+        to: 'tracy@zenduit.com',
+        address: '8502 Preston Rd. Inglewood, Maine 98380',
+        date: 'October 12, 2022 10:50:00',
+        coords: {
+            lat: 43.653001250000344, 
+            lng: -79.36312702109286
+        }
+    },
+    {
+        id: 14,
+        completed: false,
+        task: 'Work Flow: Requires Location',
+        status: 'unassigned',
+        statusText: 'Unassigned',
+        from: 'zendu@zendu.com',
+        to: 'tracy@zenduit.com',
+        address: '8502 Preston Rd. Inglewood, Maine 98380',
+        date: 'October 12, 2022 16:12:00',
+        coords: { 
+            lat: 43.651794568235054,
+            lng: -79.36500323444929
         }
     },
 ]

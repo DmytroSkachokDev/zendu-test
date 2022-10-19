@@ -1,0 +1,40 @@
+.status-block {
+    max-width: fit-content;
+    padding: 4px 16px;
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 4px;
+}
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.success {
+    background: #D7E5DA;
+    color: #53D86A;
+    border: 1px solid #53D86A;
+}
+.success .dot {
+    background-color: #53D86A;
+}
+.error {
+    background: rgba(255, 61, 0, 0.1);
+    color: #FF3D00;;
+    border: 1px solid #FF3D00;
+}
+.error .dot {
+    background-color: #FF3D00;
+}
+.unassigned {
+    background: #ECECED;
+    color: #B8B9BC;
+    border: 1px solid #B8B9BC;
+}
+.unassigned .dot {
+    background-color: #B8B9BC;
+}
