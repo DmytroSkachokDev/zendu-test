@@ -37,7 +37,10 @@
         </form>
         <ng-container *ngIf="map; else elseBlock">
             <div class="wrapper">
-                <ul class="list">
+                <ul 
+                    class="list"
+                    [ngStyle]="{'overflow-y': filteredCustomers.length > 4 ? 'scroll' : 'visible'}"
+                >
                     <app-card 
                         *ngFor="let customer of filteredCustomers"
                         [customer]="customer"
